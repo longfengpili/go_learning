@@ -2,28 +2,28 @@
 * @Author: chunyang.xu
 * @Date:   2020-11-16 17:22:00
 * @Last Modified by:   chunyang.xu
-* @Last Modified time: 2020-11-16 17:31:51
+* @Last Modified time: 2020-11-16 17:37:01
 */
 
 
 package main
 
-import (
-	"fmt"
-)
-
+import "fmt"
 
 func main() {
-	var m int64
-	m = 6
-	switch {
-	case m >=1 && m <= 3:
-		fmt.Printf("spring: %d", m)
-	case m > 3 && m <= 6:
-		fmt.Printf("summer: %d", m)
-	case m > 6 && m <= 9:
-		fmt.Printf("autumn: %d", m)
-	default:
-		fmt.Printf("winter: %d", m)
+	fmt.Printf(Season(3))
+}
+
+func Season(month int) string {
+	switch month {
+	case 12, 1, 2:
+		return "Winter"
+	case 3, 4, 5:
+		return "Spring"
+	case 6, 7, 8:
+		return "Summer"
+	case 9, 10, 11:
+		return "Autumn"
 	}
+	return "Season unknown"
 }
